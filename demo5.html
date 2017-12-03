@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>  <!-- 文档类型声明 规范开发标准 html5 -->
+<html> 	<!-- 根标签 -->
+<head>	<!-- 头部 储存元信息 -->
+<meta charset="utf-8"> <!-- 定义字符编码 国际编码 防止乱码 -->
+<meta name="keywords" content="HTML,ASP,PHP,SQL"><!-- 关键词 -->
+<meta name="description" content="学习制作登录页"><!-- 描述 -->
+<title></title>
+<style type='text/css'>
+	*{
+		margin: 0;padding: 0;
+	}
+	html{
+		height: 100%; /*继承window高度*/
+	}
+	body{
+		display: grid; /*css3 网格布局*/
+		height: 100%; /*继承html高度*/
+		/*
+		2)
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		 */
+		background-image: url('img/03.jpg');
+	}
+	.login_wrap{
+		width:300px ;
+		height:300px ;
+		margin:  auto;
+		background-color: #ecf0f1;
+		border-radius: 10px;
+	}
+	.login_wrap:before{
+		display:block; /*没宽高 要变成块元素 */
+		content: '';  /*必须要有*/
+		width: 100%;
+		height:10px;
+		border-radius:10px 10px 0 0;
+		background:-webkit-linear-gradient(left,#27ae60 0%,#27ae60 20%,#8e44ad 20%,#8e44ad 40%,#3498db 40%,#3498db 60%,#e74c3c 60%,#e74c3c 80%,#f1c40f 80%,#f1c40f 100%);
+		/*
+		伪元素
+		::before ::after
+		 */
+	}
+	.login_wrap h2{
+		text-align: center;
+		color:#368;
+		font-size:2em;
+		line-height: 80px; /*H标签和P标签不要用margin*/
+	}
+	.login_wrap .login_container{
+		display:flex; /*成块级元素排列*/
+		/*主轴方向设置为纵向 默认为横向*/
+		flex-direction:column;
+		justify-content:space-around;
+		align-items:center;
+		width: 100%;
+		height: 200px;
+	}
+	.login_wrap .login_container input{
+		width:80%;
+		height: 40px;
+		border:1px solid #bbb;
+		outline:0; /*聚焦框*/
+		font-size:1em;
+		text-indent:1em;
+		border-radius:5px;
+	}
+	.login_wrap .login_container input[type='submit']{
+		border: 0;
+		text-indent:0;
+		background-color:#e74c3c;
+		font-size:1.3em;
+		color:#fff;
+	}
+</style>
+</head>
+<body>
+	<div class="login_wrap">
+		<h2>Login</h2>
+		<form class="login_container">
+			<input type="text" name="" placeholder="请输入用户名">
+			<input type="password" name="" placeholder="请输入密码">
+			<input type="submit" name="" value="sign in">
+		</form>
+	</div>
+</body>
+</html>
